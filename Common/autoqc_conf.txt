@@ -1,0 +1,30 @@
+----------------------------
+#GLOBAL RANGE
+aqc_globalrange
+-1.0 1.0
+1 4
+----------------------------
+#CHANGE RATE
+aqc_changerate
+0.1
+1 4
+----------------------------
+#STATIONNARY TEST
+aqc_stationary
+100
+1 4
+----------------------------
+#MEDIAN FILTER
+aqc_medianfilt
+10 2.7 3.0 0.02
+1 2 4
+----------------------------
+#IMPOSSIBLE DATE
+aqc_impossibledate
+2014/06/28-21:46:00 2016/06/01-00:00:00
+1 4
+----------------------------
+#DERIVED FROM
+aqc_derivedfrom
+UCUR
+1
