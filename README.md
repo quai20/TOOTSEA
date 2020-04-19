@@ -6,7 +6,7 @@ TOOTSEA (Toolbox for Time Series Exploration and Analysis) is a Matlab solftware
 
 This repo needs (in order of priority) :
 * [M] Web documentation in docs/ (with docsify maybe)  
-* [M] Some tests in test/ to check if tootsea can run  
+* [M] Some unit testing in tests/  
 * [M] Some tiny example datasets  
 * [M] Contribution guidelines  
 * [M] References  
