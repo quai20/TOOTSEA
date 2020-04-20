@@ -63,7 +63,7 @@ raw=readtable(fname,'Delimiter',',','ReadVariableNames',false);
 raw=raw{:,:};
 %GET DATA
 UsDat=get(handles.figure1,'UserData');
-%FILL META WITH XLSREAD OUTPUT
+%FILL META
 for i=1:length(raw)
    UsDat.MMetadata.Properties = [UsDat.MMetadata.Properties(:); num2str(raw{i,1})];
    UsDat.MMetadata.Values = [UsDat.MMetadata.Values(:); num2str(raw{i,2})];
@@ -77,6 +77,34 @@ guidata(hObject, handles);
 
 % --- Executes on button press in pushbutton2.
 function pushbutton_save_Callback(hObject, eventdata, handles)
+%formating checks : Latitude, Longitude, Nominal_depth are numeric
+%GET DATA
+UsDat=get(handles.figure1,'UserData');
+
+i1=find(contains(UsDat.MMetadata.Properties,'Latitude'));
+i2=find(contains(UsDat.MMetadata.Properties,'Longitude'));
+i3=find(contains(UsDat.MMetadata.Properties,'Nominal_depth'));
+if(~isempty(i1))
+    if(isempty(str2num(UsDat.MMetadata.Values{i1})))
+        warndlg('Latitude should be numeric');
+        return;
+    end  
+end
+
+if(~isempty(i2))
+    if(isempty(str2num(UsDat.MMetadata.Values{i2})))
+        warndlg('Longitude should be numeric');
+        return;
+    end  
+end
+
+if(~isempty(i3))
+    if(isempty(str2num(UsDat.MMetadata.Values{i3})))
+        warndlg('Nominal_depth should be numeric');
+        return;
+    end  
+end
+%If everything goes well, out of the function
 uiresume(handles.figure1);
 
 function pushbutton_plus_Callback(hObject, eventdata, handles)

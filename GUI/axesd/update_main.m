@@ -9,14 +9,20 @@ function handles = update_main(hObject, eventdata, handles, ParamList, PARAMETER
 %First plotbox
 set(handles.popupmenu1,'string',ParamList);
 
-%UPDATE TREE
+
+%UPDATE TREE (THIS TAKES TO LONG TO PROCESS, NEEDS BETTER CONF
 %%%%%
-if(isfield(handles,'mytree'))
-    delete(handles.mytree.Root)
-    handles=create_maintree(hObject, eventdata, handles, PARAMETERS);
-else
-    handles=create_maintree(hObject, eventdata, handles, PARAMETERS);
-end
+
+%if(isfield(handles,'mytree'))
+%    delete(handles.mytree.Root)
+%    handles=create_maintree(hObject, eventdata, handles, PARAMETERS);
+%else
+%    handles=create_maintree(hObject, eventdata, handles, PARAMETERS);
+%end
+% USE SIMPLE THAT INSTEAD : 
+set(handles.param_list, 'Value', []);
+set(handles.param_list,'string',ParamList);
+
 
 %CHECK UNICITY OF PARAMLIST
 if(length(ParamList)~=length(unique(ParamList)))

@@ -44,6 +44,7 @@ jh.setBorderPainted(false);
 jh.setContentAreaFilled(false);
 %INIT
 ParamList={};
+set(handles.param_list, 'Value', []);
 PARAMETERS=[];
 MMetadata.Properties={};
 MMetadata.Values={};

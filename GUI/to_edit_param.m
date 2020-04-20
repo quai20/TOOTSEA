@@ -182,6 +182,10 @@ UsDat.PARAMETERS(rg).Unit=get(handles.edit_unit,'String');
 UsDat.PARAMETERS(rg).FillValue=str2num(get(handles.edit_fillv,'String'));
 UsDat.PARAMETERS(rg).ValidMin=str2num(get(handles.edit_vmin,'String'));
 UsDat.PARAMETERS(rg).ValidMax=str2num(get(handles.edit_vmax,'String'));
+
+if(isempty(UsDat.PARAMETERS(rg).FillValue))||(isempty(UsDat.PARAMETERS(rg).ValidMin))||(isempty(UsDat.PARAMETERS(rg).ValidMax))
+    warndlg('FillValue and ValidMin/Max should be numeric');
+else
 %
 UsDat.PARAMETERS(rg).Comment=get(handles.edit_comment,'String');    
 %
@@ -195,6 +199,7 @@ set(handles.figure1,'UserData',UsDat);
 set(handles.listbox1,'String',UsDat.ParamList);
 %UPDATE HANDLE
 guidata(hObject, handles);
+end
 
 % --- Executes on button press in pushbutton_del.
 function pushbutton_del_Callback(hObject, eventdata, handles)
