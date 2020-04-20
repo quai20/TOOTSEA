@@ -60,7 +60,6 @@ File formats supported (for now) :
 - ADCD Continental Nortek : Ensemble binary files (.cpr) (Continental_Parser)
 - ADCP Signature Nortek : A2CP data file (Signature_Parser)
 
-
 ## 1.2 From netcdf file
 We also want to manage existing netCDF files by reading all or some of the variables. After selecting the nc file, the user has to choose the variables to import in the tool. The first timeserie imported is plotted on the main axis. Only parameters that have the same size than the time vector are loaded. The QC values are automatically imported if VAR_QC exists. The "units", "valid_min", "valid_max", "long_name" and "FillValue" attributes are also imported.
 
