@@ -52,7 +52,7 @@ The main window of the tool is made of 3 areas :
 # 1. Read
 ## 1.1 Data from instrument
 The idea is to be able to read raw output file from instruments. To start we want to manage Microcat, Aquadopp, ADCP (WH), SBE39, SBE56 and RCM11. Thanks to the good efforts of others, the existing parsing functions are based on the work of "IMOS Toolbox" [1] developers. We just formalized the outputs so the main Tootsea function can handle different reading functions. The "import" function is accessible from "File" menu. After selecting the parser corresponding to the
-instrument, and then the data file and sometimes a configuration file (for the RCM11 for example), the function return the different data sets, the name & units and the meta data if present. The first timeserie imported is plotted on the main axis (2.1). 
+instrument, and then the data file and sometimes a configuration file (for the RCM11 for example), the function return the different data sets, the name & units and the meta data if present. The first timeserie imported is plotted on the main axis. 
 
 File formats supported (for now) :
 - Aquadopp : .aqd files (Aquadopp_Parser)
@@ -240,7 +240,7 @@ This function allows to apply your own scripts to generate the QC array(s). You 
 
 # 6. Export
 ## 6.1 NetCDF file
-Accessible from "File/Export" menu, this function (2.19) allows to export one or multiple series to a netcdf file based on the OceanSite conventions. The user has to select the parameter he wants to add in the netcdf file and click "Add". For multilevel parameters, the user is asked either to use the parameters depth value (if available) or to define a new one by hand. He’s then asked to export the
+Accessible from "File/Export" menu, this function allows to export one or multiple series to a netcdf file based on the OceanSite conventions. The user has to select the parameter he wants to add in the netcdf file and click "Add". For multilevel parameters, the user is asked either to use the parameters depth value (if available) or to define a new one by hand. He’s then asked to export the
 QC array or not. To change the names (or unit, long_name, fillValue, min or max), the user can access the "Edit Parameters" function from there. The metadata listed in the right panel are mandatory. If those are highlighted in green, these metadata
 are present. If not, they should be in red, and the user can access the "Edit Metadata" function to create them.
 
