@@ -6,8 +6,8 @@ TOOTSEA (Toolbox for Time Series Exploration and Analysis) is a Matlab solftware
 
 # Installation
 
-The installation of this toolbox could be directly achieved by downloading this repositories and run "startup_tootsea" from main directory
-Matlab 2015 was used to develop this tool. Some functions use the "signal processing toolbox", but they're also working (slightly differently) without it.  
+The installation of this toolbox could be directly achieved by downloading this repositories and run "startup_tootsea" from within the main directory.
+Matlab 2016 was used to develop this tool. Some graphics malfunction could occur in more recent version. Some functions use the "signal processing toolbox", but they're also working (slightly differently) without it.  
 
 # Introduction
 ## Context
@@ -153,10 +153,11 @@ The decimate function allows to set a new dT for the current serie (selected in 
 - One point : take the closest point of the serie for each time stamp.
 - Mean value : take the average value calculated on the new time array (mean calculated between (t-dT/2) and (t+dT/2). 
   
-After modifying the starting date (default is first point of array) and a setting a mandatory new dT, the user can evaluate the result and then save a new serie.
+After modifying the starting date (default is first point of array) and a setting a mandatory new dT, the user can evaluate the result and then save a new serie.   
 
 <img src="media/decimate.png" alt="[decimate]" width="60%"/>  
 
+  
 # 4. Plots/Stats
 ## 4.1 Histogram
 The "histogram" plotting function allows display the distribution of one (1D) or two (2D) parameters values.
