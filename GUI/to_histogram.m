@@ -167,6 +167,13 @@ if(get(handles.checkbox1,'Value')==1)
     %CALCULATE NUMBER OF BINS WITH SIZE
     binsize1=str2num(get(handles.edit_bs1,'String'));
     binsize2=str2num(get(handles.edit_bs2,'String'));
+    
+    if(isempty(binsize1))||(isempty(binsize2))
+        warndlg('Bin size should be numeric');
+        set(findall(0,'Type','figure'), 'pointer', 'arrow'); drawnow;
+        return;
+    end
+    
     sval1=round(abs(lim1_2-lim1_1)/binsize1);
     sval2=round(abs(lim2_2-lim2_1)/binsize2);
 else
@@ -179,29 +186,50 @@ if(dim==[1 0])
     if(r3==1)
         Arr2Plot=UsDat.PARAMETERS(var1).Data(lev1,:);
     else
-        Arr2Plot=UsDat.PARAMETERS(var1).Data(lev1,ismember(UsDat.PARAMETERS(var1).QC_Serie(lev1,:),[1 2 3 5 7 8]));
+        %check for good data
+        if(length(UsDat.PARAMETERS(var1).Data(lev1,ismember(UsDat.PARAMETERS(var1).QC_Serie(lev1,:),[1 2 3 5 7 8])))>3)
+             Arr2Plot=UsDat.PARAMETERS(var1).Data(lev1,ismember(UsDat.PARAMETERS(var1).QC_Serie(lev1,:),[1 2 3 5 7 8]));
+        else
+            warndlg('No good data !');
+            set(findall(0,'Type','figure'), 'pointer', 'arrow'); drawnow;
+            return;
+        end
     end
     histogram(Arr2Plot,sval1,'BinLimits',[lim1_1 lim1_2]);
     grid on;
     l=xlabel([UsDat.ParamList{var1} ' (' UsDat.PARAMETERS(var1).Unit ')']); set(l,'interpreter','none');
     ylabel('Count');
 %2D CASE (calls hist2d routine)   
-elseif(dim==[0 1])           
+elseif(dim==[0 1])               
+    %CHECK SIZES
+    if(length(UsDat.PARAMETERS(var1).Data(lev1,:)) ~= length(UsDat.PARAMETERS(var2).Data(lev2,:)))
+        warndlg('Size problem');
+        set(findall(0,'Type','figure'), 'pointer', 'arrow'); drawnow;
+        return;        
+    end        
     %OPTION
     if(r3==1)
         Arr2Plot_1=UsDat.PARAMETERS(var1).Data(lev1,:);
         Arr2Plot_2=UsDat.PARAMETERS(var2).Data(lev2,:);
-    else
+    else                
         ind=ismember(UsDat.PARAMETERS(var1).QC_Serie(lev1,:),[1 2 3 5 7 8]).*ismember(UsDat.PARAMETERS(var2).QC_Serie(lev2,:),[1 2 3 5 7 8]);
         ind=boolean(ind);
-        Arr2Plot_1=UsDat.PARAMETERS(var1).Data(lev1,ind);
-        Arr2Plot_2=UsDat.PARAMETERS(var2).Data(lev2,ind);
+        % check for good data        
+        if((length(UsDat.PARAMETERS(var1).Data(lev1,ind))>5)&&(length(UsDat.PARAMETERS(var2).Data(lev2,ind))>5))
+             Arr2Plot_1=UsDat.PARAMETERS(var1).Data(lev1,ind);
+             Arr2Plot_2=UsDat.PARAMETERS(var2).Data(lev2,ind);
+        else
+            warndlg('No good data !');
+            set(findall(0,'Type','figure'), 'pointer', 'arrow'); drawnow;
+            return;
+        end                
     end  
+    
     %CHECK SIZES
     if(length(Arr2Plot_1) ~= length(Arr2Plot_2))
         warndlg('Size problem');
         set(findall(0,'Type','figure'), 'pointer', 'arrow'); drawnow;
-        return;
+        return;        
     end    
     
     %WITH LIM DEFINED

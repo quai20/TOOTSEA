@@ -83,7 +83,11 @@ for i=1:length(PSel)
       elseif(r2==1)
         if(max(UsDat.PARAMETERS(PSel(i)).QC_Serie(lev,:))==0)
             rg_pr=find(strcmp(UsDat.ParamList,'PRES_REL'));
+            if(isempty(rg_pr))
+                ind=ismember(UsDat.PARAMETERS(PSel(i)).QC_Serie(lev,:),[1,2,3]);
+            else
             ind=ismember(UsDat.PARAMETERS(rg_pr).QC_Serie(lev,:),[1,2,3]);
+            end
         else
             ind=ismember(UsDat.PARAMETERS(PSel(i)).QC_Serie(lev,:),[1,2,3]);
         end

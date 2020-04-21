@@ -7,7 +7,5 @@ addpath(genpath('Parser'));
 addpath(genpath('Science')); 
 
 %START TOOTSEA REQ
+!synclient HorizTwoFingerScroll=0
 main;
-
-%START TOOTSEA SA
-%catalog;

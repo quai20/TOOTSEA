@@ -39,9 +39,9 @@ set(handles.edit,'enable','off'); set(handles.preprocess,'enable','off');
 set(handles.plots,'enable','off'); set(handles.qualification,'enable','off');
 set(handles.export,'enable','off');
 %LOGO
-jh=java(findobj_java(handles.pushbutton9));
-jh.setBorderPainted(false);    
-jh.setContentAreaFilled(false);
+%jh=java(findobj_java(handles.pushbutton9));
+%jh.setBorderPainted(false);    
+%jh.setContentAreaFilled(false);
 %INIT
 ParamList={};
 set(handles.param_list, 'Value', []);

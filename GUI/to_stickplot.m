@@ -96,6 +96,11 @@ r4=get(handles.radiobutton4,'Value');
 %GET NDAYS & STEP
 ndays=str2num(get(handles.edit_days,'String'));
 step=str2num(get(handles.edit_step,'String'));
+
+if(isempty(ndays))||(isempty(step))
+    warndlg('Length and Step should be numeric');
+    return;
+end
 %CHECK SIZES
 if(length(UsDat.PARAMETERS(val1).Data(lev1,:)) ~= length(UsDat.PARAMETERS(val2).Data(lev2,:)))
    warndlg('Size problem');
