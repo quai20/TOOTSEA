@@ -6,7 +6,7 @@ TOOTSEA (Toolbox for Time Series Exploration and Analysis) is a Matlab solftware
 
 # Installation
 
-The installation of this toolbox could be directly achieved by downloading this repositories and run "startup_req" from main directory
+The installation of this toolbox could be directly achieved by downloading this repositories and run "startup_tootsea" from main directory
 Matlab 2015 was used to develop this tool. Some functions use the "signal processing toolbox", but they're also working (slightly differently) without it.  
 
 # Introduction
@@ -175,7 +175,7 @@ This function allows to plot the spectrum of the selected parameter (and level) 
 - Interpolation : force the linear interpolation on the serie.
 - Window length : length of the calculation window (in points).
 - nOverlap : length of the overlapping section between main windows (in points).
-- Confidence : Interval of confidence level (in percent).
+- Confidence : Interval of confidence level (in percent) (this parameter is only usefull if you have the signal processing toolbox)
 
 <img src="media/spectrum.png" alt="[spectrum]" width="70%"/>  
 
