@@ -13,7 +13,7 @@ This repo needs (in order of priority) :
 * [X] Some unit testing in tests/ (to be continued, with GUIDE test if possible)
 * [X] Some tiny example datasets to be used in the tests
 * [X] Contribution guidelines  
-* [ ] Release
+* [X] Release
 
 ## Testing
 You can test some basic behaviours of Tootsea by running `run_tests`, which runs every `test_xxx.m` test file present in the `tests` directory. If you want to contribute to the code, please consider adding your tests there.
