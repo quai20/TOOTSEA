@@ -17,8 +17,11 @@ This repo needs (in order of priority) :
 * [X] Contribution guidelines  
 * [ ] Release
 
+## Testing
+You can test some basic behaviours of Tootsea by running `run_tests`, which runs every `test_xxx.m` test file present in the `tests` directory. If you want to contribute to the code, please consider adding your tests there.
+
 ## Contributing to `TOOTSEA`
 
-Should one want to propose a change or new feature, please file an issue through the GitHub interface. Bug reports specifically may be made here. When proposing a change/new feature, or reporting a bug, please illustrate the issue with a minimal reproducible example, including texts, codes and resultant outputs.
+Should one want to propose a change or new feature, please file an issue through the GitHub interface. Bug reports specifically may be made here. When proposing a change/new feature, or reporting a bug, please illustrate the issue with a minimal reproducible example, including texts, codes and resultant outputs.  
 
 By contributing to this project, you agree to follow the [Code of conduct](docs/codeOfconduct.md)
