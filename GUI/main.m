@@ -56,7 +56,7 @@ guidata(hObject, handles);
 function varargout = main_OutputFcn(hObject, eventdata, handles) 
 varargout{1} = handles.output;
 %
-%clearvars;
+clearvars;
 
 %%%%%%%%%%%%%%%%%
 % FILE MENU     %
@@ -741,10 +741,10 @@ switch choice
     case 'Yes please'
     savesession_Callback(hObject, eventdata, handles)  
     delete(handles.figure1);
-    clearvars;
+    clearvars;    
     case 'No thank you'
     delete(handles.figure1);
-    clearvars;
+    clearvars;    
 end
 
 %%%%%%%%%%%%%%%%%
