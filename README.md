@@ -1,8 +1,6 @@
 [![DOI](https://img.shields.io/badge/DOI-10.17882%2F59331-informational)](https://doi.org/10.17882/59331)
 
-# TOOTSEA
-### IFREMER-LOPS 2018 
-
+# Tootsea
 <img src="https://raw.githubusercontent.com/quai20/TOOTSEA/master/logo.png" alt="tootsea logo" width=200 height=200>
 
 ## Summary
