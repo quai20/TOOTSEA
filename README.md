@@ -17,7 +17,7 @@ Some work plan :
 
 ## Testing
 You can test some basic behaviours of Tootsea by running `run_tests`, which runs every `test_xxx.m` test file present in the `tests` directory. If you want to contribute to the code, please consider adding your tests there.  
-Since `TOOTSEA` is UI based, some behaviors are tricky to test automatically, for those, you can find some testing protocols in [docs/testing_protocols.md](docs/testing_protocols.md).
+Since `TOOTSEA` is UI based, some behaviors are tricky to test automatically, for those, you can find some testing protocols in [tests/testing_protocols.md](tests/testing_protocols.md).
 
 ## Contributing to `TOOTSEA`
 
