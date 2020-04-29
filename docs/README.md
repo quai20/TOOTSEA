@@ -2,7 +2,7 @@
 
 <center><img src="https://user-images.githubusercontent.com/17851004/80486405-66ec1a80-895b-11ea-93be-c8914089584c.png" alt="tootsea logo" width=300></center>
 
-TOOTSEA (Toolbox for Time Series Exploration and Analysis) is a Matlab solftware, developped at LOPS (Laboratoire d'Océanographie Physique et Spatiale), IFREMER. This tool is dedicated to analysing datasets from moored oceanographic instruments (Currentmeter, CTD, Thermistance, ...). TOOTSEA allows the user to explore the data and metadata from various instruments file, to analyse them with multiple plots and stats available, to do some processing/corrections and qualify (automatically and manually) the data, and finally to export the work in a netcdf file.
+TOOTSEA (Toolbox for Time Series Exploration and Analysis) is a Matlab software, developped at LOPS (Laboratoire d'Océanographie Physique et Spatiale), IFREMER. This tool is dedicated to analysing datasets from moored oceanographic instruments (Currentmeter, CTD, Thermistance, ...). TOOTSEA allows the user to explore the data and metadata from various instruments file, to analyse them with multiple plots and stats available, to do some processing/corrections and qualify (automatically and manually) the data, and finally to export the work in a netcdf file.
 
 # Installation
 
@@ -25,7 +25,7 @@ The main objectives for this development are directly connected to the RREX 2017
 Some functions in Tootsea are very generic so the user can insert his own matlab code to process the data.  
 
 ## Presentation
-Developped for matlab 2015.
+Developped with matlab 2016.
 Each parameter is stored as a "Time Serie" structure, containing the following properties :
 - Name of the serie
 - Time array (vector or matrix if multilevel)
