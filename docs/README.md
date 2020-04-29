@@ -258,3 +258,7 @@ From most of the "graphic" function windows, the user can save the figure ("Save
 [2] T. Huck. OVIDE 2. Archimer, 2004.  
 [3] C. Kermabon P. Le Bot and F. Gaillard P. Lherminier. Cascade v6.1: Logiciel de validation et de visualisation des mesures adcp de coque. Archimer, 2011.  
 [4] V. Thierry, P. Branellec, S. Leizour, and M. Hamon. Compte rendu de la campagne RREX 2015. N/O Thalassa 5 juin 2015 - 10 juillet 2015. Archimer, 2015.  
+  
+
+---    
+Ressources for logo design : Freepik.com

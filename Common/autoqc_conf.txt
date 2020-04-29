@@ -16,7 +16,7 @@ aqc_stationary
 ----------------------------
 #MEDIAN FILTER
 aqc_medianfilt
-10 2.7 3.0 0.02
+200 2.7 3.0 0.02
 1 2 4
 ----------------------------
 #IMPOSSIBLE DATE
