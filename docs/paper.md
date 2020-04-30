@@ -41,7 +41,7 @@ Initial objectives of this development were :
 
 ![Plot example.\label{fig:example}](media/histo2d_paper.png)
 
-**Tootsea** is used for multiple projects involving moorings, to pre-process data on the ship quickly after instruments recovery, and then back at the lab to build proper moorings data files fitted for scientific analysis.
+**Tootsea** is used for multiple projects involving moorings, to preprocess data on the ship quickly after instruments recovery, and then back at the lab to build proper moorings data files fitted for scientific analysis.
 
 # Acknowledgements
 
