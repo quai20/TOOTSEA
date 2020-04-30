@@ -45,6 +45,6 @@ Initial objectives of this development were :
 
 # Acknowledgements
 
-The authors acknowledge Pascale Lherminier, Virginie Thierry, Pierre Branellec and Herlé Mercier, for their inputs, comments and ideas in the development of this tool.  
+The author acknowledges Pascale Lherminier, Virginie Thierry, Pierre Branellec and Herlé Mercier, for their inputs, comments and ideas in the development of this tool.  
 
 # References
