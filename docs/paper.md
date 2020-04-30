@@ -10,7 +10,7 @@ authors:
    orcid: 0000-0002-4956-8698
    affiliation: "1"
 affiliations:
- - name: Laboratoire d’Océanographie Physique et Spatiale (LOPS), CNRS, IRD, Ifremer, IUEM, Univ. Brest, 29280 Plouzané, France
+ - name: Laboratory for Ocean Physics and remote Sensing (LOPS), CNRS, IRD, Ifremer, IUEM, Univ. Brest, 29280 Plouzané, France
    index: 1
 date: 28 April 2020
 bibliography: paper.bib
