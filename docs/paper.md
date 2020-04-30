@@ -32,7 +32,7 @@ Initial objectives of this development were :
 
 # Tootsea
 
-**Tootsea** is a matlab software designed to read, process, qualify and export data from typical moored instruments. As for today, it can reads input from some Nortek, RDI or Seabird instruments. It can also load netcdf files complient with time series format. In a UI based environment, user is able to :  
+**Tootsea** is a matlab software designed to read, process, qualify and export data from typical moored instruments. As for today, it can read input from some Nortek, RDI or Seabird instruments. It can also load netcdf files complient with time series format. In a UI based environment, user is able to :  
 - **Edit** : this software allows to edit the variables attributes (name, units, fillValue, ...) and all metadata (wich can be loaded from the instrument and defined by the user). New variables can also be created by prebuild or custom functions.  
 - **Correct** : Some correction tools are available in **Tootsea** so that common operations (such as filtering, correcting magnetic declination, correcting drift, resampling, ...) can be done quickly and easily.  
 - **Plot** : Are provided classical data visualisation tool such as histogram (fig 1), spectrum or stickplot. It also allows users to generate some stats report.  
