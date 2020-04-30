@@ -38,10 +38,7 @@ Initial objectives of this development were :
   - **Correct** : Some correction tools are available in **Tootsea** so that common operations can be done quickly and easily (such as resampling, filtering, correcting magnetic declination, correcting potential drift, ...).  
   - **Plot** : Are provided classical data visualisation tool such as histogram (fig1), spectrum or stickplot. It also allows users to generate some stats report.  
   - **Qualify** : One key element of moorings dataset preprocessing is to apply quality flags on time series data. Within **Tootsea** it can be done automatically with built-in scripts, or manually. User can also import their own matlab scripts to do the qualification.  
-  - **Export** : Finally, user can save his work by  
-      - exporting selected parameters to netcdf  
-      - saving current work session that will be loadable in **Tootsea**.  
-      - printing any figures in standard graphic formats.  
+  - **Export** : Finally, user can save his work by exporting selected parameters to netcdf, saving current work session that will be loadable in **Tootsea** and printing any figures in standard graphic formats.  
 
 ![Plot example.\label{fig:example}](media/histo2d_paper.png)
 
