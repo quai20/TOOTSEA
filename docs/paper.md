@@ -16,8 +16,6 @@ date: 28 April 2020
 bibliography: paper.bib
 ---
 
-<span style="display:block;text-align:center">![](media/logo_v2_paper.png)</span>
-
 # Summary
 
 During past decades, several research projects involved instrumented moorings ([@Ovide:2004], [@Rrex:2018]) in our lab. Those moorings lines are basically a collection of instruments connected to a wire and anchored on the sea floor (down to few thousand meters). It is the Eulerian way of measuring ocean currents, since a mooring is stationary at a fixed location. These projects generate quite long time series (up to few years), providing some new inputs to research perspectives [@Lozier:2019].
