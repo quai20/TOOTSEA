@@ -1,5 +1,5 @@
 ---
-title: 'Tootsea : Matlab TOolbox for Oceanographic mooring Time Series Exploration and Analysis'
+title: 'Tootsea : Matlab Toolbox for Oceanographic mooring Time Series Exploration and Analysis'
 tags:
   - Matlab
   - moorings
@@ -12,7 +12,7 @@ authors:
 affiliations:
  - name: Laboratory for Ocean Physics and remote Sensing (LOPS), CNRS, IRD, Ifremer, IUEM, Univ. Brest, 29280 Plouzané, France
    index: 1
-date: 28 April 2020
+date: 8 May 2020
 bibliography: paper.bib
 ---
 
