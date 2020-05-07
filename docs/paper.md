@@ -1,5 +1,5 @@
 ---
-title: 'Tootsea : Matlab TOolbox for Oceanographic mooring Time Series Exploration and Analysis'
+title: 'Tootsea : Matlab Toolbox for Oceanographic mooring Time Series Exploration and Analysis'
 tags:
   - Matlab
   - moorings
