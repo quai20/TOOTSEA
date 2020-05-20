@@ -23,8 +23,8 @@ With those projects came a need for a dedicated toolbox to read, analyze, prepro
 
 Initial objectives of this development were :  
 - Read the output file of multiple oceanographic instruments and be able to add reader for other instruments in the future.  
-- Do some pre-processing and allow user to apply their own processing codes.  
-- Qualify the data automatically and manually and allow user to apply their own qualifying codes.  
+- Do some pre-processing and allow user to apply their own processing scripts.  
+- Qualify the data automatically and manually and allow user to apply their own qualifying scripts. 
 - Export the data to standard netcdf format.  
 - Generate some basic statistics and plots.
 
