@@ -19,7 +19,7 @@ bibliography: paper.bib
 # Summary
 
 During past decades, several research projects involved instrumented moorings ([@Ovide:2004], [@Rrex:2018]) in our lab. Those moorings lines are basically a collection of instruments connected to a wire and anchored on the sea floor (down to few thousand meters). It is the Eulerian way of measuring ocean currents, since a mooring is stationary at a fixed location. These projects generate quite long time series (up to few years), providing some new inputs to research perspectives [@Lozier:2019].
-With those projects came a need for a dedicated toolbox to read, analyze, preprocess and qualify dataset from those instruments. For example data has to be available in a proper output format, with a user defined time step and with some calculations applied on the data.
+With those projects came a need for a dedicated toolbox to read, analyze, preprocess and qualify dataset from those instruments. Having a tool capable of gathering these tasks in one place definitely save some effort and time. 
 
 Initial objectives of this development were :  
 - Read the output file of multiple oceanographic instruments and be able to add reader for other instruments in the future.  
