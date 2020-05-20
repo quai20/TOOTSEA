@@ -1,0 +1,23 @@
+{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "https://orcid.org/0000-0002-4956-8698",
+      "@type": "Person",
+      "email": "kevin.balem@ifremer.fr",
+      "name": "Kevin Balem",
+      "affiliation": "Ifremer"
+    }
+],
+  "identifier": "https://doi.org/10.17882/59331",
+  "codeRepository": "https://github.com/quai20/TOOTSEA",
+  "datePublished": "2020-05-20",
+  "dateModified": "2020-05-20",
+  "dateCreated": "2020-05-20",
+  "description": "Tootsea (Toolbox for Oceanographic mooring Time Series Exploration and Analysis) is a matlab software dedicated to analysing datasets from moored oceanographic instruments such as current...",
+  "keywords": "moorings, timeseries, matlab",
+  "license": "MIT",
+  "title": "TOOTSEA",
+  "version": "v1.1.0"
+}
