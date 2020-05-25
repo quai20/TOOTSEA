@@ -4,7 +4,7 @@
 <img src="https://user-images.githubusercontent.com/17851004/80486405-66ec1a80-895b-11ea-93be-c8914089584c.png" alt="tootsea logo" width=300>
 
 ## Summary
-TOOTSEA (Toolbox for Oceanographic mooring Time Series Exploration and Analysis) is a Matlab software, developped at LOPS (Laboratoire d'Océanographie Physique et Spatiale), IFREMER. This tool is dedicated to analysing datasets from moored oceanographic instruments (Currentmeter, CTD, Thermistance, ...). TOOTSEA allows the user to explore the data and metadata from various instruments file, to analyse them with multiple plots and stats available, to do some processing/corrections and qualify (automatically and manually) the data, and finally to export the work in a netcdf file.  
+TOOTSEA (Toolbox for Oceanographic mooring Time Series Exploration and Analysis) is a Matlab software, developped at LOPS (Laboratoire d'Océanographie Physique et Spatiale), IFREMER. This tool is dedicated to analyzing datasets from moored oceanographic instruments (Currentmeter, CTD, Thermistance, ...). TOOTSEA allows the user to explore the data and metadata from various instruments file, to analyse them with multiple plots and stats available, to do some processing/corrections and qualify (automatically and manually) the data, and finally to export the work in a netcdf file.  
 Find web documentation [here](https://quai20.github.io/TOOTSEA/).
 
 Some work plan :
