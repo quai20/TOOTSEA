@@ -51,8 +51,7 @@ The main window of the tool is made of 3 areas :
 
 # 1. Read
 ## 1.1 Data from instrument
-The idea is to be able to read raw output file from instruments. To start we want to manage Microcat, Aquadopp, ADCP (WH), SBE39, SBE56 and RCM11. Thanks to the good efforts of others, the existing parsing functions are based on the work of "IMOS Toolbox" [1] developers. We just formalized the outputs so the main Tootsea function can handle different reading functions. The "import" function is accessible from "File" menu. After selecting the parser corresponding to the
-instrument, and then the data file and sometimes a configuration file (for the RCM11 for example), the function return the different data sets, the name & units and the meta data if present. The first timeserie imported is plotted on the main axis. 
+The idea is to be able to read raw output file from various instruments often used on oceanographic moorings. Some existing parsing/reading functions are implemented [1] and others were developped to fit our needs. The "import" function is accessible from "File" menu. After selecting the parser corresponding to the instrument, and then the data file and sometimes a configuration file (for the RCM11 for example), the function return the different data sets, the name & units and the meta data if present. The first timeserie imported is plotted on the main axis. 
 
 File formats supported (for now) :
 - Aquadopp : .aqd files (Aquadopp_Parser)
