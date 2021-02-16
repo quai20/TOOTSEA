@@ -79,7 +79,7 @@ for i=1:length(v.Dimensions)
        break;
    end
 end
-itime=ncread(UsDat.fname,TIMECHAR);
+itime=double(ncread(UsDat.fname,TIMECHAR));
 
 origin_time=datenum(get(handles.edit_date,'String'),'dd/mm/yyyy HH:MM:SS');
 if(get(handles.radiobutton1,'Value')==1)
