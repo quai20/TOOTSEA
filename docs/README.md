@@ -215,7 +215,6 @@ The automatic QC function allows to apply to predefined tests to a parameter (fo
 - Change rate : test if |Vn - Vn-1| + |Vn - Vn+1| <= 2*threshold
 - Stationary : test if N successive values vary
 - Median filter : test if (median - c1.std) < value < (median + c2.std) on N points
-14CHAPTER 1. TOOTSEA - READ, EXPLORE AND QUALIFY TIME SERIES DATASET
 - Impossible date : test if min_date < time < max_date
 - Derived from : When the QC from other parameter(s) is applied. For example, PSAL QC
 derives from TEMP, CNDC and PRES QCs. QC is applied only if higher than current one.
