@@ -26,5 +26,5 @@ aqc_impossibledate
 ----------------------------
 #DERIVED FROM
 aqc_derivedfrom
-UCUR
+PRES CNDC
 1
