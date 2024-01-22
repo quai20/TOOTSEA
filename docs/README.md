@@ -6,7 +6,7 @@ TOOTSEA (TOolbox for Oceanographic mooring Time Series Exploration and Analysis)
 
 # Installation
 
-The installation of this toolbox could be directly achieved by downloading this repositories and run "startup_tootsea" from within the main directory.
+The installation of this toolbox could be directly achieved by downloading this repositories and **run "startup_tootsea" from within the main directory**.
 Matlab 2016 was used to develop this tool. Some graphics malfunction could occur in more recent version. Some functions use the "signal processing toolbox", but they're also working (slightly differently) without it.  
 
 # Introduction
