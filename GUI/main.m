@@ -71,7 +71,7 @@ function import_Callback(hObject, eventdata, handles)
 %GLOBAL VARS
 global ParamList PARAMETERS MDim MMetadata;
 %SELECT A PARSER
-str = {'Aquadopp_Parser','Aquapro_Parser','RCM_Parser','SBE3x_Parser','SBE37SM_Parser','SBE56_Parser','WH_Parser','Continental_Parser','Signature_Parser','Concerto_Parser'};
+str = {'Aquadopp_Parser','Aquapro_Parser','RCM_Parser','SBE3x_Parser','SBE37SM_Parser','SBE56_Parser','WH_Parser','Continental_Parser','Signature_Parser','RSK_Parser'};
 [s,v] = listdlg('PromptString','Select a Parser:','SelectionMode','single','ListString',str);
 if(v==1)
 ParserName=str{s};

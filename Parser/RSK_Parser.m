@@ -1,4 +1,4 @@
-function [MDim, MData, MMetadata]=Concerto_Parser()
+function [MDim, MData, MMetadata]=RSK_Parser()
 %
 % Developped for TOOTSEA 2024
 % K. BALEM - LOPS IFREMER
