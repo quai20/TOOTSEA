@@ -1,20 +1,12 @@
 /****************************************************************************/
 /*                                                                          */
-/*     NGDC's Geomagnetic Field Modelling software for the IGRF and WMM     */
+/*     NGDC's Geomagnetic Field Modeling software for the IGRF and WMM      */
 /*                                                                          */
 /****************************************************************************/
 /*                                                                          */
 /*     Disclaimer: This program has undergone limited testing. It is        */
-/*     being distributed unofficially. The National Geophysical Data        */
+/*     being distributed unoffically. The National Geophysical Data         */
 /*     Center does not guarantee it's correctness.                          */
-/*                                                                          */
-/****************************************************************************/
-/*                                                                          */
-/*     Version 7.01:                                                        */
-/*     - paths originally limited to 95 characters have been extended to OS */
-/*            MAX_PATH if exist (windows) or 1024                           */
-/*                                                                          */
-/*                                          IMOS toolbox Nov-26-2015        */
 /*                                                                          */
 /****************************************************************************/
 /*                                                                          */
@@ -23,7 +15,7 @@
 /*            -- accept new DGRF2005 coeffs with 0.01 nT precision          */
 /*            -- make sure all values are separated by blanks               */
 /*            -- swapped n and m: first is degree, second is order          */
-/*     - new my_isnan function improves portability                         */
+/*     - new my_isnan function improves portablility                        */
 /*     - corrected feet to km conversion factor                             */
 /*     - fixed date conversion errors for yyyy,mm,dd format                 */
 /*     - fixed lon/lat conversion errors for deg,min,sec format             */
@@ -68,7 +60,7 @@
 /*         Model Data File       :  Name of the data file containing the    */
 /*                                  spherical harmonic coefficients of      */
 /*                                  the chosen model.  The model and path   */
-/*                                  must be less than MAX_PATH chars.       */
+/*                                  must be less than PATH chars.           */
 /*                                                                          */
 /*         Coordinate Preference :  Geodetic (WGS84 latitude and altitude   */
 /*                                  above ellipsoid (WGS84),                */
@@ -115,9 +107,6 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h> 
-#if defined(WIN32) || defined(WIN64)
-#include <windows.h>  /* for MAX_PATH */
-#endif
 
 int my_isnan(double d)
 {
@@ -140,11 +129,8 @@ int my_isnan(double d)
 #define TRUE 1                  /* constants */
 #define RECL 81
 
-#ifndef MAX_PATH
-#define MAX_PATH 1024
-#endif
+#define MAXINBUFF RECL+14
 
-#define MAXINBUFF MAX_PATH
 /** Max size of in buffer **/
 
 #define MAXREAD MAXINBUFF-2
@@ -284,6 +270,7 @@ FILE *stream = NULL;                /* Pointer to specified model data file */
 /*                                                                          */
 /****************************************************************************/
 
+
 int main(int argc, char**argv)
 {
 #ifdef MAC
@@ -395,7 +382,7 @@ int main(int argc, char**argv)
       strncpy(args[iarg],argv[iarg],MAXREAD);
   
   /* printing out version number and header */
-  printf("\n\n Geomag v7.01 - Nov 26, 2015 ");
+  printf("\n\n Geomag v7.0 - Jan 25, 2010 ");
   
   if ((argc==2)&&((*(args[1])=='h')||(*(args[1])=='?')||(args[1][1]=='?')))
     {
@@ -697,6 +684,8 @@ int main(int argc, char**argv)
                                                    * read to end of line or buffer */
             {
               fileline++;                           /* On new line */
+              
+              
               if (strlen(inbuff) != RECL)       /* IF incorrect record size */
                 {
                   printf("Corrupt record in file %s on line %d.\n", mdfile, fileline);

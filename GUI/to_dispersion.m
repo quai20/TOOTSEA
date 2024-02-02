@@ -41,10 +41,12 @@ set(handles.figure1,'UserData',UsDat);
 set(handles.popupmenu_param1,'String',UsDat.ParamList,'Max',length(UsDat.ParamList));
 set(handles.popupmenu_param1,'Value',1);
 set(handles.popupmenu_lev1,'String',num2str([1:size(UsDat.PARAMETERS(1).Data,1)]'));
-set(handles.popupmenu_param2,'String',UsDat.ParamList,'Max',length(UsDat.ParamList));
-set(handles.popupmenu_param2,'Value',2);
-set(handles.popupmenu_lev2,'String',num2str([1:size(UsDat.PARAMETERS(2).Data,1)]'));
-set(handles.popupmenu_lev2,'Value',1);
+if length(UsDat.ParamList)>1
+    set(handles.popupmenu_param2,'String',UsDat.ParamList,'Max',length(UsDat.ParamList));
+    set(handles.popupmenu_param2,'Value',2);
+    set(handles.popupmenu_lev2,'String',num2str([1:size(UsDat.PARAMETERS(2).Data,1)]'));
+    set(handles.popupmenu_lev2,'Value',1);
+end
 % Update handles structure
 guidata(hObject, handles);
 

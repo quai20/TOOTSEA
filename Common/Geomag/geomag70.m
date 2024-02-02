@@ -70,7 +70,7 @@ function [ geomagDeclin, geomagLat, geomagLon, geomagDepth, geomagDate, model] =
   if isempty(path), path = pwd; end
   
   % read in model parameter
-  model    = 'IGRF12';
+  model    = 'IGRF13';
   
   geomagPath        = fullfile(path, 'Common/Geomag');
   geomagExeFull     = fullfile(geomagPath, computerDir, geomagExe);

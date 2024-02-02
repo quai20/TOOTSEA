@@ -42,11 +42,12 @@ set(handles.popupmenu1,'String',UsDat.ParamList,'Max',length(UsDat.ParamList));
 set(handles.popupmenu1,'Value',1);
 set(handles.popupmenu_lev1,'String',num2str([1:size(UsDat.PARAMETERS(1).Data,1)]'));
 set(handles.popupmenu_lev1,'Value',1);
-set(handles.popupmenu2,'String',UsDat.ParamList,'Max',length(UsDat.ParamList));
-set(handles.popupmenu2,'Value',2);
-set(handles.popupmenu_lev2,'String',num2str([1:size(UsDat.PARAMETERS(2).Data,1)]'));
-set(handles.popupmenu_lev2,'Value',1);
-
+if length(UsDat.ParamList)>1
+    set(handles.popupmenu2,'String',UsDat.ParamList,'Max',length(UsDat.ParamList));
+    set(handles.popupmenu2,'Value',2);
+    set(handles.popupmenu_lev2,'String',num2str([1:size(UsDat.PARAMETERS(2).Data,1)]'));
+    set(handles.popupmenu_lev2,'Value',1);
+end
 % Update handles structure
 guidata(hObject, handles);
 % UIWAIT makes spectrum wait for user response (see UIRESUME)

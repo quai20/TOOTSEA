@@ -7,26 +7,20 @@
 %
 clear; clc;
 %GLOBAl
-opath='ICE/netcdf/';                    %<============================
-outName='TEST_4_SPECTRUM.nc';        %<============================
+opath='~/Bureau/Swotalis/MOORING_DATA/PROCESSING_KEVIN/M1';                    %<============================
+outName='TEST_4_START.nc';        %<============================
 writenc=1; %write netcdf automatically
 %TIME
 tstep=1/24;
-datearray=datenum(2015,06,29,12,00,00):tstep:datenum(2017,07,22,12,00,00);   %<============================
+datearray=datenum(2023,03,18,12,00,00):tstep:datenum(2023,11,25,12,00,00);   %<============================
 NDAYS=length(datearray);
 %LEVELS
-NB_LEVELS=24;        %<============================
-YOURCHOICE=1;        %<============================
+NB_LEVELS=32;        %<============================
 %VARS
 %VARS={'PRES','TEMP','CNDC','PSAL','DEPTH'};                %<============================
-%VARS={'PRES','DEPTH','UCUR','VCUR','WCUR','CSPD','CDIR'};   %<==============AAA==============
-VARS={'UCUR'};   %<==============AAA==============
-%MOORING INFO
-Moorings={'ICE','ICM','ICW','IRE','IRM','IRW','RRT'};
-lats=[57.580,58.095,58.434,58.920,58.981,59.091,58.773];
-lons=[28.447,29.385,30.027,31.567,32.160,33.259,30.669];
-Mooring=Moorings{YOURCHOICE}; 
-lat=lats(YOURCHOICE); lon=lons(YOURCHOICE);
+VARS={'DEPTH','UCUR','VCUR','WCUR','CSPD','CDIR'};   %<==============AAA==============
+lat=-23.4833; 
+lon=167.34286;
 
 %%%%%%%%%%% NOTHING TO CHANGE AFTER THAT IN THEORY
 
@@ -64,7 +58,7 @@ while(1)
     for k=1:length(indx) 
         data=ncread(fname,ParamList{indx(k)});
         if(strcmp(ParamList{indx(k)},'BINPRES') || strcmp(ParamList{indx(k)},'BINDEPTH') || strcmp(ParamList{indx(k)},'DEPTH'))
-            datq=ncread(fname,'PRES_QC');
+            datq=ncread(fname,'DEPTH_QC');
         else
             datq=ncread(fname,[ParamList{indx(k)} '_QC']);
         end       
@@ -166,10 +160,10 @@ if(writenc)
     ncwriteatt(outName,'/','principal_investigator', 'Virginie Thierry');
     ncwriteatt(outName,'/','principal_investigator_email', 'Virginie.Thierry@ifremer.fr');
     ncwriteatt(outName,'/','institution', 'IFREMER');
-    ncwriteatt(outName,'/','project', 'RREX : The Reykjanes Ridge Experiment');
-    ncwriteatt(outName,'/','keywords', 'RREX,moorings,adcp,microcat,aquadopp,currentmeters,atlantic,circulation');
+    ncwriteatt(outName,'/','project', 'SWOTALIS');
+    ncwriteatt(outName,'/','keywords', 'SWOTALIS,SWOT,moorings,adcp,microcat,aquadopp,currentmeters,concerto');
     %
-    ncwriteatt(outName,'/','area', 'North Atlantic Ocean');
+    %ncwriteatt(outName,'/','area', 'North Atlantic Ocean');
     ncwriteatt(outName,'/','geospatial_lat_min', num2str(lat));
     ncwriteatt(outName,'/','geospatial_lon_min', num2str(lon));
     ncwriteatt(outName,'/','geospatial_lat_max', num2str(lat));
@@ -186,9 +180,9 @@ if(writenc)
     ncwriteatt(outName,'/','publisher_email', 'Kevin.Balem@ifremer.fr');
     ncwriteatt(outName,'/','update_interval', 'void');       
     %
-    ncwriteatt(outName,'/','date_created', datestr(datenum(2018,02,23),'yyyy-mm-ddTHH:MM:SSZ'));
+    ncwriteatt(outName,'/','date_created', datestr(datenum(2023,02,02),'yyyy-mm-ddTHH:MM:SSZ'));
     ncwriteatt(outName,'/','date_modified', datestr(now,'yyyy-mm-ddTHH:MM:SSZ'));
-    ncwriteatt(outName,'/','contributor_name','Virginie Thierry, Kevin Balem, Pascale LHerminier, Herle Mercier, Pierre Branellec');
+    %ncwriteatt(outName,'/','contributor_name','Virginie Thierry, Kevin Balem, Pascale LHerminier, Herle Mercier, Pierre Branellec');
     %
     % --------------------------------------+
     %   Write coordinate variables          |
