@@ -1,16 +1,8 @@
-Site_code,2E
-Project_name,OVIDE06
-Serial,ABC123xxx
-Latitude,59.54
-Longitude,42.35
-Deployment_latitude,59.54
-Deployment_longitude,42.35
-Deployment_time,11/06/04 20:25
-Deployment_ship,Thalassa
-Recovery_latitude,59.54
-Recovery_longitude,42.35
-Recovery_time,22/06/06 00:25
-Recovery_ship,Maria S. Merian
-Nominal_depth,189
-PI_Name,Pascale Lherminier
-PI_Contact,1234@ifremer.fr
+Site_code,PASS
+Project_name,CROSSROAD
+Latitude,46 99928
+Longitude,-47 00003
+Deployment_time,10/10/2023
+Recovery_time,25/09/2025
+PI,Damien Desbruyeres
+Data_processing,Kevin Balem

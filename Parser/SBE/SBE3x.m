@@ -361,7 +361,7 @@ if read_temp == 0 && read_cond == 0 && read_pres == 0 && read_sal == 0
             
     end
     
-    samples = textscan(fid, sample_expr, 'delimiter', ',');
+    samples = textscan(fid, sample_expr, 'delimiter', ',');    
     
     time = datenum(samples{end},'dd mmm yyyy, HH:MM:SS');
     
@@ -426,7 +426,7 @@ else
             if read_sal,  sal_block  = sal_block( 1:length(time_block)); end
             fgetl(fid);
         end
-        
+               
         time_block = datenum(time_block, 'dd mmm yyyy, HH:MM:SS');
         
         temperature(   nsamples:nsamples+length(temp_block)-1) = temp_block;

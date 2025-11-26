@@ -26,7 +26,7 @@ TimeDim = length(UsDat.MDim.Time); %C'est le vecteur temps du 1er parametre sele
 %VerticalArray=str2num(UsDat.MMetadata.Values{find(strcmp(UsDat.MMetadata.Properties,'Nominal_depth'))});    
 %Bin depth
 if(isfield(UsDat.MDim,'VerticalDim'))
-    BinDepth = length(UsDat.MDim.VerticalDim);
+    BinLenght = length(UsDat.MDim.VerticalDim);
     BinArray=UsDat.MDim.VerticalDim;
 end
 
@@ -83,38 +83,24 @@ ncwriteatt(outfile,'LONGITUDE', 'reference','WGS84');
 ncwriteatt(outfile,'LONGITUDE', 'valid_min',-180);
 ncwriteatt(outfile,'LONGITUDE', 'valid_max',180);
 
-% nccreate(outfile,'DEPTH', 'Dimensions',{'DEPTH',FullDepth}, 'Datatype','single');
-% ncwrite(outfile,'DEPTH', single(VerticalArray));
-% ncwriteatt(outfile,'DEPTH', 'standard_name','depth');
-% ncwriteatt(outfile,'DEPTH', 'units','meter');
-% ncwriteatt(outfile,'DEPTH', 'positive','down');
-% ncwriteatt(outfile,'DEPTH', 'axis','Z');
-% ncwriteatt(outfile,'DEPTH', 'long_name','depth of measurement');
-% ncwriteatt(outfile,'DEPTH', 'valid_min',0);
-% ncwriteatt(outfile,'DEPTH', 'valid_max',12000);
-
-% if(isfield(UsDat.MDim,'VerticalDim'))
-%     nccreate(outfile,'BINDEPTH', 'Dimensions',{'N_LEVELS',BinDepth}, 'Datatype','single');
-%     ncwrite(outfile,'BINDEPTH', single(BinArray));
-%     ncwriteatt(outfile,'BINDEPTH', 'standard_name','depth_of_bin');
-%     ncwriteatt(outfile,'BINDEPTH', 'units','meter');
-%     ncwriteatt(outfile,'BINDEPTH', 'positive','up');
-%     ncwriteatt(outfile,'BINDEPTH', 'axis','Z');
-%     ncwriteatt(outfile,'BINDEPTH', 'long_name','depth_of_bin');
-%     ncwriteatt(outfile,'BINDEPTH', 'valid_min',0);
-%     ncwriteatt(outfile,'BINDEPTH', 'valid_max',12000);
-% end
-
 % -----------------------------------+
 %   Write data variables             |
 % -----------------------------------+
+
+if(isfield(UsDat.MDim,'VerticalDim'))
+    nccreate(outfile,'DBEAM', 'Dimensions',{'N_LEVELS',BinLenght});       
+    ncwriteatt(outfile,'DBEAM', 'long_name','distance along beam');
+    ncwriteatt(outfile,'DBEAM', 'standard_name','distance along beam');
+    ncwriteatt(outfile,'DBEAM', 'units','meters');
+    ncwrite(outfile,'DBEAM', double(BinArray));
+end
 
 for i=1:length(UsDat.ParamList_sel)
     
     if(size(UsDat.PARAMETERS_sel(i).Data,1)>1)
         %%%Multilevel        
         %
-        nccreate(outfile,UsDat.ParamList_sel{i}, 'Dimensions',{'N_LEVELS',BinDepth,'TIME',TimeDim});       
+        nccreate(outfile,UsDat.ParamList_sel{i}, 'Dimensions',{'N_LEVELS',BinLenght,'TIME',TimeDim});       
         ncwriteatt(outfile,UsDat.ParamList_sel{i}, 'long_name',strrep(UsDat.PARAMETERS_sel(i).Long_name,'_',' '));
         ncwriteatt(outfile,UsDat.ParamList_sel{i}, 'standard_name',strrep(UsDat.PARAMETERS_sel(i).Long_name,' ','_'));
         ncwriteatt(outfile,UsDat.ParamList_sel{i}, 'Comment',UsDat.PARAMETERS_sel(i).Comment);
@@ -125,7 +111,7 @@ for i=1:length(UsDat.ParamList_sel)
         ncwrite(outfile,UsDat.ParamList_sel{i}, double(UsDat.PARAMETERS_sel(i).Data));
         if(UsDat.QC_Choice(i)==1)
         %QC
-        nccreate(outfile,[UsDat.ParamList_sel{i} '_QC'], 'Dimensions',{'N_LEVELS',BinDepth,'TIME',TimeDim},'Datatype','int8');        
+        nccreate(outfile,[UsDat.ParamList_sel{i} '_QC'], 'Dimensions',{'N_LEVELS',BinLenght,'TIME',TimeDim},'Datatype','int8');        
         ncwriteatt(outfile,[UsDat.ParamList_sel{i} '_QC'], 'long_name','quality flag');      
         ncwriteatt(outfile,[UsDat.ParamList_sel{i} '_QC'], 'conventions','OceanSites reference table 2');      
         ncwriteatt(outfile,[UsDat.ParamList_sel{i} '_QC'], '_FillValue',int8(-128));

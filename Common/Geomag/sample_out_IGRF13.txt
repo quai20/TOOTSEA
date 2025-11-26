@@ -1,2 +1,2 @@
 Date Coord-System Altitude Latitude Longitude D_deg D_min I_deg I_min H_nT X_nT Y_nT Z_nT F_nT dD_min dI_min dH_nT dX_nT dY_nT dZ_nT dF_nT
-2023,07,22 D M-87.000000 -23.483300 167.342860    13d  9m   -50d 12m   30711.8  29905.7   6990.4 -36863.0  47980.1     3.1      -2.0        -22.6    -28.3     22.0    -15.7     -2.4
+2024,03,04 D M-205.000000 46.999280 -47.000030   -15d 30m    64d 49m   21092.3  20324.7  -5638.3  44853.4  49565.2    11.7      -5.0         52.6     69.7     55.1    -58.4    -30.4

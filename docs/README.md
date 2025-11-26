@@ -53,7 +53,7 @@ The main window of the tool is made of 3 areas :
 ## 1.1 Data from instrument
 The idea is to be able to read raw output file from various instruments often used on oceanographic moorings. Some existing parsing/reading functions are implemented [1] and others were developped to fit our needs. The "import" function is accessible from "File" menu. After selecting the parser corresponding to the instrument, and then the data file and sometimes a configuration file (for the RCM11 for example), the function return the different data sets, the name & units and the meta data if present. The first timeserie imported is plotted on the main axis. 
 
-File formats supported (for now) :
+Instrument supported (for now) :
 - Aquadopp : .aqd files (Aquadopp_Parser)
 - Aquapro : PRF data file (Aquapro_Parser)
 - SBE37 : .asc (SBE3x_Parser) and .cnv (SBE37SM_Parser) files
@@ -63,6 +63,7 @@ File formats supported (for now) :
 - ADCD WH Teledyne: Ensemble binary files (.00x) (WH_Parser)
 - ADCD Continental Nortek : Ensemble binary files (.cpr) (Continental_Parser)
 - ADCP Signature Nortek : A2CP data file (Signature_Parser)  
+- RBR logger (Solo, Duet, Concerto) : .rsk file (RSK_Parser)
 
 ## 1.2 From netcdf file
 We also want to manage existing netCDF files by reading all or some of the variables. After selecting the nc file, the user has to choose the variables to import in the tool. The first timeserie imported is plotted on the main axis. Only parameters that have the same size than the time vector are loaded. The QC values are automatically imported if VAR_QC exists. The "units", "valid_min", "valid_max", "long_name" and "FillValue" attributes are also imported.  

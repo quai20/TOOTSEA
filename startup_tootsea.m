@@ -8,5 +8,5 @@ addpath(genpath('Data_test'));
 addpath(genpath('tests')); 
 
 %START TOOTSEA REQ
-!synclient HorizTwoFingerScroll=0
+%!synclient HorizTwoFingerScroll=0
 main;

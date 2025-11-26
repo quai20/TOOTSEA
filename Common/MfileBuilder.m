@@ -132,13 +132,26 @@ while(1)
         'SelectionMode','multiple','ListString',num2str([1:NB_LEVELS]'));
         if(tc==0)
             break;
-        end 
-        disp(['ASSIGN TO : ' VARS{indy} ' - LEV : ' num2str(fliplr(indz))]);
+        end         
         %ASSIGN
         %le fliplr qui sert à retourner les niveaux car dans
         %le fichier adcp, niveau 1 = bottom, et dans le fichier
         %mouillage, niveau 1 = surface.
-        eval([VARS{indy} '([' num2str(fliplr(indz)) '],:)=datd;']);        
+        if(size(data,1)>1)
+            choice = questdlg('Flip Cells ?','','Keep order','Flip Array','Keep order');
+            switch choice
+                case 'Keep order'
+                    disp(['ASSIGN TO : ' VARS{indy} ' - LEV : ' num2str(indz)]);
+                    eval([VARS{indy} '([' num2str(indz) '],:)=datd;']);       
+                case 'Flip Array'
+                    disp(['ASSIGN TO : ' VARS{indy} ' - LEV : ' num2str(fliplr(indz))]);
+                    eval([VARS{indy} '([' num2str(fliplr(indz)) '],:)=datd;']);       
+            end            
+        else
+            disp(['ASSIGN TO : ' VARS{indy} ' - LEV : ' num2str(indz)]);
+            eval([VARS{indy} '([' num2str(indz) '],:)=datd;']);       
+        end    
+        
     end       
 end
 
@@ -152,13 +165,13 @@ if(writenc)
     %   Write global attributes   |
     % ----------------------------+    
     ncwriteatt(outName,'/','data_type', 'OceanSITES time-series data');
-    ncwriteatt(outName,'/','site_code', Mooring);
-    ncwriteatt(outName,'/','platform_code', Mooring);
+    %ncwriteatt(outName,'/','site_code', Mooring);
+    %ncwriteatt(outName,'/','platform_code', Mooring);
     ncwriteatt(outName,'/','data_mode', 'D');
-    ncwriteatt(outName,'/','title', [Mooring ' mooring file']);
-    ncwriteatt(outName,'/','summary', 'This file gathers all mooring instruments data, filtered and decimated. See RREX eulerian data report for details.');
-    ncwriteatt(outName,'/','principal_investigator', 'Virginie Thierry');
-    ncwriteatt(outName,'/','principal_investigator_email', 'Virginie.Thierry@ifremer.fr');
+    %ncwriteatt(outName,'/','title', [Mooring ' mooring file']);
+    ncwriteatt(outName,'/','summary', 'This file gathers all mooring instruments data, filtered and decimated. See eulerian data report for details.');
+    %ncwriteatt(outName,'/','principal_investigator', 'Virginie Thierry');
+    %ncwriteatt(outName,'/','principal_investigator_email', 'Virginie.Thierry@ifremer.fr');
     ncwriteatt(outName,'/','institution', 'IFREMER');
     ncwriteatt(outName,'/','project', 'SWOTALIS');
     ncwriteatt(outName,'/','keywords', 'SWOTALIS,SWOT,moorings,adcp,microcat,aquadopp,currentmeters,concerto');

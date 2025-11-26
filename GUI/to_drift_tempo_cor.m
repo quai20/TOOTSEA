@@ -77,11 +77,13 @@ dins1=get(handles.edit_ins1,'String');
 dins2=get(handles.edit_ins2,'String'); 
 dreal1=get(handles.edit_real1,'String'); 
 dreal2=get(handles.edit_real2,'String');
+%GET INDEX
+[~,n1] = min(abs(UsDat.MDim.Time-datenum(dins1,'dd/mm/yyyy-HH:MM:SS')));
+[~,n2] = min(abs(UsDat.MDim.Time-datenum(dins2,'dd/mm/yyyy-HH:MM:SS')));
 %CALCULATION
-co_a=datenum(dreal1,'dd/mm/yyyy-HH:MM:SS')-datenum(dins1,'dd/mm/yyyy-HH:MM:SS');
-co_b1=(datenum(dreal2,'dd/mm/yyyy-HH:MM:SS')-datenum(dreal1,'dd/mm/yyyy-HH:MM:SS'))/(UsDat.MDim.Time(end)-UsDat.MDim.Time(1));
-co_b2=(datenum(dins2,'dd/mm/yyyy-HH:MM:SS')-datenum(dins1,'dd/mm/yyyy-HH:MM:SS'))/(UsDat.MDim.Time(end)-UsDat.MDim.Time(1));
-DriftT=co_a + (UsDat.MDim.Time-UsDat.MDim.Time(1)).*(co_b1-co_b2) + UsDat.MDim.Time;
+co_c = (datenum(dreal2,'dd/mm/yyyy-HH:MM:SS') - datenum(dreal1,'dd/mm/yyyy-HH:MM:SS'))/(n2-n1);
+co_d = datenum(dreal2,'dd/mm/yyyy-HH:MM:SS') - co_c * n2;
+DriftT = co_c*(1:length(UsDat.MDim.Time)) + co_d;
 plot(handles.axes1,1:length(UsDat.MDim.Time),DriftT);      
 
 % --- Executes on button press in pushbutton_save.
@@ -91,18 +93,20 @@ UsDat=get(handles.figure1,'UserData');
 %GET SELECTED PARAMETERS
 psel=get(handles.listbox_param,'Value');
 %GET DATES
-dins1=get(handles.edit_ins1,'String'); 
+dins1=get(handles.edit_ins1,'String');
 dins2=get(handles.edit_ins2,'String'); 
 dreal1=get(handles.edit_real1,'String'); 
 dreal2=get(handles.edit_real2,'String');
+%GET INDEX
+[~,n1] = min(abs(UsDat.MDim.Time-datenum(dins1,'dd/mm/yyyy-HH:MM:SS')));
+[~,n2] = min(abs(UsDat.MDim.Time-datenum(dins2,'dd/mm/yyyy-HH:MM:SS')));
 %CALCULATION
-co_a=datenum(dreal1,'dd/mm/yyyy-HH:MM:SS')-datenum(dins1,'dd/mm/yyyy-HH:MM:SS');
-co_b1=(datenum(dreal2,'dd/mm/yyyy-HH:MM:SS')-datenum(dreal1,'dd/mm/yyyy-HH:MM:SS'))/(UsDat.MDim.Time(end)-UsDat.MDim.Time(1));
-co_b2=(datenum(dins2,'dd/mm/yyyy-HH:MM:SS')-datenum(dins1,'dd/mm/yyyy-HH:MM:SS'))/(UsDat.MDim.Time(end)-UsDat.MDim.Time(1));
+co_c = (datenum(dreal2,'dd/mm/yyyy-HH:MM:SS') - datenum(dreal1,'dd/mm/yyyy-HH:MM:SS'))/(n2-n1);
+co_d = datenum(dreal2,'dd/mm/yyyy-HH:MM:SS') - co_c*n2;
 %NEW PARAMETERS 
 for i=1:length(psel)      
-   NewParamName = [UsDat.ParamList{psel(i)} get(handles.edit_suffix,'String')];
-   eval([NewParamName,'= TimeSerie(''',NewParamName,''',co_a + (UsDat.PARAMETERS(psel(i)).Time-UsDat.MDim.Time(1)).*(co_b1-co_b2) + UsDat.PARAMETERS(psel(i)).Time,UsDat.PARAMETERS(psel(i)).Data);']);       
+   NewParamName = [UsDat.ParamList{psel(i)} get(handles.edit_suffix,'String')];   
+   eval([NewParamName,'= TimeSerie(''',NewParamName,''',co_c*(1:length(UsDat.MDim.Time)) + co_d ,UsDat.PARAMETERS(psel(i)).Data);']);       
    UsDat.ParamList=[UsDat.ParamList;{NewParamName}];
    eval(['UsDat.PARAMETERS=[UsDat.PARAMETERS ',NewParamName,'];']);
    %Copy info
