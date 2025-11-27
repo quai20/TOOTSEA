@@ -18,7 +18,9 @@ latitude=str2num(UsDat.MMetadata.Values{find(strcmp(UsDat.MMetadata.Properties,'
 longitude=str2num(UsDat.MMetadata.Values{find(strcmp(UsDat.MMetadata.Properties,'Longitude'),1)});
 
 % Dimensions
-TimeDim = length(UsDat.MDim.Time); %C'est le vecteur temps du 1er parametre selectionné (reaffecté dans MDim).
+TimeArray = UsDat.PARAMETERS_sel(1).Time; %C'est le vecteur temps du 1er parametre selectionné (reaffecté dans MDim).
+TimeDim = length(TimeArray); 
+
 %Mais un test est fait avant pour verifier la coherence entre parametres.
 
 %Nominal depth
@@ -55,7 +57,7 @@ ncwriteatt(outfile,'/','Created from', UsDat.MDim.FileName);
 % --------------------------------------+
 
 nccreate(outfile,'TIME', 'Dimensions',{'TIME',TimeDim}, 'Datatype','double');
-ncwrite(outfile,'TIME', double(UsDat.MDim.Time)- datenum(1950,1,1,0,0,0));
+ncwrite(outfile,'TIME', double(TimeArray)- datenum(1950,1,1,0,0,0));
 ncwriteatt(outfile,'TIME', 'standard_name','time');
 ncwriteatt(outfile,'TIME', 'units','days since 1950-01-01T00:00:00Z');
 ncwriteatt(outfile,'TIME', 'axis','T');
